@@ -8,13 +8,31 @@ public class Library {
     private List<Book> books = new ArrayList<Book>();
 
     // Add a new member to the library
-    public void addMember(Member member) {
+    public boolean addMember(Member member) {
+        // Check if a member with the same ID already exists
+        if (findMemberById(member.getId()) != null) {
+            System.out.println("Error: A member with ID " + member.getId() + " already exists.");
+            return false; // Addition failed
+        }
+
+        // Add the member if no duplicate ID is found
         members.add(member);
+        System.out.println("Member added successfully!");
+        return true; // Addition successful
     }
     
     // Add a new book to the library
-    public void addBook(Book book) {
+    public boolean addBook(Book book) {
+        // Check if a book with the same ID already exists
+        if (findBookById(book.getId()) != null) {
+            System.out.println("Error: A book with ID " + book.getId() + " already exists.");
+            return false; // Addition failed
+        }
+
+        // Add the book if no duplicate ID is found
         books.add(book);
+        System.out.println("Book added successfully!");
+        return true; // Addition successful
     }
 
     // Find a member by ID
@@ -24,7 +42,7 @@ public class Library {
                 return member;
             }
         }
-        return null;
+        return null; // No member found with the given ID
     }
 
     // Find a book by ID
@@ -34,7 +52,7 @@ public class Library {
                 return book;
             }
         }
-        return null;
+        return null; // No book found with the given ID
     }
 
     // Get the list of members
