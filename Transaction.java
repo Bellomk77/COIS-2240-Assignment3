@@ -32,18 +32,21 @@ public class Transaction {
         }
     }
 
-    public void returnBook(Book book, Member member) {
-        if (member.getBorrowedBooks().contains(book)) {
-            member.returnBook(book);
-            book.returnBook();
-            String transactionDetails = getCurrentDateTime() + " - Returning: " + member.getName() + " returned " + book.getTitle();
-            System.out.println(transactionDetails);
-
-            saveTransaction(transactionDetails);
-        } else {
+    public boolean returnBook(Book book, Member member) {
+        if (!member.getBorrowedBooks().contains(book)) {
             System.out.println("This book was not borrowed by the member.");
+            return false;
         }
+
+        member.returnBook(book);
+        book.returnBook();
+        String transactionDetails = getCurrentDateTime() + " - Returning: " + member.getName() + " returned " + book.getTitle();
+        System.out.println(transactionDetails);
+
+        saveTransaction(transactionDetails);
+        return true;
     }
+
 
     private void saveTransaction(String transactionDetails) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("transactions.txt", true))) {
