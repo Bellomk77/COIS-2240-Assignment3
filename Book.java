@@ -1,11 +1,13 @@
 package librarymanagement;
-
 public class Book {
     private int id;
     private String title;
     private boolean available;
 
-    public Book(int id, String title) {
+    public Book(int id, String title) throws Exception {
+        if (!isValidId(id)) {
+            throw new Exception("Invalid book ID. ID must be between 100 and 999.");
+        }
         this.id = id;
         this.title = title;
         this.available = true;
