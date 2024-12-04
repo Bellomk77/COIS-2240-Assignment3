@@ -1,0 +1,14 @@
+2024-12-03 10:52:15 - Borrowing: mohammed borrowed bello
+2024-12-03 15:33:46 - Borrowing: George borrowed Programming
+2024-12-03 15:35:47 - Borrowing: George borrowed Math
+2024-12-03 15:36:46 - Borrowing: Anne borrowed AI
+2024-12-03 15:38:50 - Returning: George returned Math
+2024-12-03 15:39:45 - Borrowing: Anne borrowed Math
+2024-12-04 15:33:22 - Borrowing: Alice borrowed Java Programming
+2024-12-04 15:33:22 - Returning: Alice returned Java Programming
+2024-12-04 15:33:22 - Borrowing: Alice borrowed Java Programming
+2024-12-04 15:33:22 - Borrowing: Alice borrowed Data Structures
+2024-12-04 15:59:22 - Borrowing: Alice borrowed Java Programming
+2024-12-04 15:59:22 - Returning: Alice returned Java Programming
+2024-12-04 16:27:31 - Borrowing: Alice borrowed Java Programming
+2024-12-04 16:27:31 - Returning: Alice returned Java Programming
