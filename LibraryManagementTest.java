@@ -2,8 +2,27 @@ package librarymanagement;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Modifier;
 
 public class LibraryManagementTest {
+
+    @Test
+    public void testSingletonTransaction() {
+        try {
+            // Step 1: Access the constructor of the Transaction class using reflection
+            Constructor<Transaction> constructor = Transaction.class.getDeclaredConstructor();
+
+            // Step 2: Get the modifier of the constructor to check if it is private
+            int modifiers = constructor.getModifiers();
+
+            // Step 3: Assert that the constructor is private, enforcing Singleton behavior
+            assertTrue("Constructor should be private", Modifier.isPrivate(modifiers));
+        } catch (Exception e) {
+            fail("Unexpected exception: " + e.getMessage());
+        }
+    }
+
 
     @Test
     public void testBookId() {
